@@ -4,7 +4,11 @@ using namespace std;
 
 
 void solve() {
+    float value;
+    cin >> value;
 
+    if (!(value <= 1 || value >= 9)) cout << "O valor está na faixa permitida" << endl;
+    else cout << "O valor está fora da faixa permitida" << endl;
 }
 
 int main() {
