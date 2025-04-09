@@ -1,8 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
-// #include <conio.h>
-// #include <ex01.c>
-// #include <ex02.c>
+#include <conio.h>
+#include <ex01.c>
+#include <ex02.c>
 
 int main() {
     char option = 0;
@@ -14,21 +14,22 @@ int main() {
         printf("3. ex.03.c \n");
         printf("PRESS 'ESC' TO EXIT!");
 
-        scanf("%c", &option);
-        printf("%c\n\n\n", option);
+
+        // scanf("%c", &option);
+        // printf("%c\n\n\n", option);
         // option = getch();
         // system("cls");
 
-        // switch(option) {
-        //     case 1:
-        //         ex01();
-        //         break;
-        //     case 2:
-        //         ex02();
-        //         break;
-        //     default:
-        //         printf("default");
-        // }
+        switch(option) {
+            case 1:
+                ex01();
+                break;
+            case 2:
+                ex02();
+                break;
+            default:
+                printf("default");
+        }
 
-    } while (option != 0);
+    } while (option != 27);
 }
