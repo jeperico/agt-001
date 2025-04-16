@@ -39,7 +39,7 @@ inicio
     escreval("[NEXT CATALOG] 20/02/2002 - 20:02:20")
 fimprocedimento
 
-funcao inteiro renderType()
+funcao renderType(): inteiro
 var type: inteiro
 inicio
     escreval(" +-----------------------------------------------------------------------+\n")
@@ -53,7 +53,7 @@ inicio
     retorne type
 fimfuncao
 
-funcao inteiro renderRating()
+funcao renderRating(): inteiro
 var rating: inteiro
 inicio
     escreval("\n\n +-----------------------------------------------------------------------+\n")
@@ -67,7 +67,7 @@ inicio
     retorne rating
 fimfuncao
 
-funcao inteiro renderGenre()
+funcao renderGenre(): inteiro
 var genre: inteiro
 inicio
     escreval("\n\n +-----------------------------------------------------------------------+\n")
@@ -81,7 +81,7 @@ inicio
     retorne genre
 fimfuncao
 
-funcao inteiro renderProvider()
+funcao renderProvider(): inteiro
 var provider: inteiro
 inicio
     escreval("\n\n +-----------------------------------------------------------------------+\n")
@@ -110,10 +110,10 @@ procedimento renderResponse(type, raiting, genre, provider: inteiro)
 inicio
     se type = 1 entao
         se genre = 1 entao
-            se provider = 1 e raiting = 18 entao
+            se (provider = 1 e raiting) = 18 entao
                 renderResponseTable("Filme", "Ação", "Netflix", "Vingadores: Ultimato", 18)
             senao
-                se provider = 3 e raiting = 0 entao
+                se (provider = 3 e raiting = 0) entao
                     renderResponseTable("Filme", "Ação", "Disney+", "O Rei Leão", 0)
                 senao
                     availabilityError()
@@ -121,10 +121,10 @@ inicio
             fimse
         senao
             se genre = 3 entao
-                se provider = 2 e (raiting = 10 ou raiting = 18) entao
+                se (provider = 2 e (raiting = 10 ou raiting = 18)) entao
                     renderResponseTable("Filme", "Drama", "Amazon Prime", "Titanic", 10)
                 senao
-                    se provider = 3 e raiting = 0 entao
+                    se (provider = 3 e raiting = 0) entao
                         renderResponseTable("Filme", "Drama", "Disney+", "O Menino que Descobriu o Vento", 0)
                     senao
                         availabilityError()
@@ -154,17 +154,17 @@ inicio
                 fimse
             senao
                 se genre = 2 entao
-                    se provider = 1 e raiting = 18 entao
+                    se (provider = 1 e raiting = 18) entao
                         renderResponseTable("Série", "Comédia", "Netflix", "Breaking Bad", 18)
                     senao
-                        se provider = 2 e (raiting = 10 ou raiting = 18) entao
+                        se (provider = 2 e (raiting = 10 ou raiting = 18)) entao
                             renderResponseTable("Série", "Comédia", "Amazon Prime", "Friends", 10)
                         senao
                             availabilityError()
                         fimse
                     fimse
                 senao
-                    se genre = 4 e provider = 4 e raiting = 18 entao
+                    se (genre = 4 e provider = 4 e raiting = 18) entao
                         renderResponseTable("Série", "Suspense", "HBO Max", "Chernobyl", 18)
                     senao
                         availabilityError()
