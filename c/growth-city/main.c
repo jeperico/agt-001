@@ -1,16 +1,21 @@
 #include <stdio.h>
+#include <math.h>
 
 void main() {
-  // [CITY A] <Argel> (Argélia)
-  // [CITY B] <Beirute> (Líbano)
-  printf(" +-----------------------------+ \n");
-  printf("<| &-28s |>\n", "QUANTIDADE DE PESSOAS");
-  printf(" +-----------------------------+ \n\n");
-  printf("<| &-28s |>\n", "CITY <Argel>");
-  printf(" +-----------------------------+ \n\n");
-
   int argelPopulation = 90000;
   float argelGrowthRate = 0.03;
   int beirutPopulation = 200000;
   float beirutGrowthRate = 0.015;
+
+  int years = 1;
+  float argelGrowth = argelPopulation;
+  float beirutGrowth = beirutPopulation;
+
+  while (argelGrowth < beirutGrowth) {
+    argelGrowth = argelPopulation * pow((1 + argelGrowthRate), years);
+    beirutGrowth = beirutPopulation * pow((1 + beirutGrowthRate), years);
+    years++;
+  }
+
+  printf("Year %d: Argel: %.2f, Beirute: %.2f\n", years, argelGrowth, beirutGrowth);
 }
