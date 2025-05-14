@@ -14,8 +14,7 @@ void main() {
     printf("\n%d° - [ENTER NUMBER]: ", i + 1);
     scanf("%d", &current);
     
-    if(current == 0) vec[i] = 1;
-    else vec[i] = current;
+    vec[i] = current;
   }
 
   printf("\033[H\033[J");
