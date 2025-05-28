@@ -1,20 +1,12 @@
 #include <stdio.h>
-#include <stdlib.h>
 #include <stdbool.h>
-#include <time.h>
 
 void main() {
   // Binary Search
   // Note: This implementation assumes the array is sorted.
   // Big-O: O(log2(n))
 
-  srand(time(NULL));
-  int v[1000];
-  for (int i = 0; i < 1000; i++) {
-    v[i] = rand() % 1000;
-    printf("%d ", v[i]);
-  }
-  // int v[] = {2, 4, 5, 8, 11, 17, 32, 44, 60, 81};
+  int v[] = {2, 4, 5, 8, 11, 17, 32, 44, 60, 81};
   int n = 10, key;
 
   printf("Input the key to search: ");
