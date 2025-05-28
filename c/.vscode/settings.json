@@ -1,5 +1,15 @@
 {
     "files.associations": {
-        "stdio.h": "c"
+        "*.json.liquid": "json",
+        "*.yaml.liquid": "yaml",
+        "*.md.liquid": "markdown",
+        "*.js.liquid": "liquid-javascript",
+        "*.css.liquid": "liquid-css",
+        "*.scss.liquid": "liquid-scss",
+        ".env.*": "dotenv",
+        ".prettierrc": "json",
+        "*.css": "css",
+        "stdio.h": "c",
+        "time.h": "c"
     }
 }

@@ -11,5 +11,5 @@ void main() {
     int name;
     scanf("%s", &name);
 
-    printf("Name: %s", name)
+    printf("Name: %s", name);
 }
