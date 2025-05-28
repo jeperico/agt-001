@@ -2,10 +2,11 @@
 #include <stdbool.h>
 
 void main() {
-  // Linear Search
-  // Big-O: O(n)
+  // Binary Search
+  // Note: This implementation assumes the array is sorted.
+  // Big-O: O(log2(n))
 
-  int v[] = { 6, 9, 4, -3, 17, 22, 13, 81, 44, 32 };
+  int v[] = {2, 4, 5, 8, 11, 17, 32, 44, 60, 81};
   int n = 10, key;
 
   printf("Input the key to search: ");
@@ -13,19 +14,25 @@ void main() {
 
   bool found = false;
   int iterations = 0;
-  for(int i = 0; i < n; i++) {
+  int left = 0, right = n - 1, center;
+  do {
+    center = (left + right) / 2;
     iterations++;
-    if(v[i] == key) {
-      printf("Key found at index %d\n", i);
+    if (v[center] == key) {
+      printf("Key found at index %d\n", center);
       found = true;
-      break;
+    } else if (v[center] < key) {
+      left = center + 1;
+    } else {
+      right = center - 1;
     }
-  }
+  } while (!found && left <= right);
+  
 
   if(!found) {
     printf("Key not found\n");
   }
 
   printf("Total iterations: %d\n", iterations);
-  printf("Time Complexity: O(n)\n");
+  printf("Time Complexity: O(log2(n))\n");
 }
