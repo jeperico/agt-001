@@ -9,15 +9,25 @@ void main() {
   // Big-O: O(log2(n))
 
   srand(time(NULL));
-  int v[1000];
-  for (int i = 0; i < 1000; i++) {
-    v[i] = rand() % 1000;
+  int v[100];
+  int size = sizeof(v) / sizeof(v[0]);
+  for (int i = 0; i < size; i++) {
+    v[i] = rand() % 100;
     printf("%d ", v[i]);
   }
-  // int v[] = {2, 4, 5, 8, 11, 17, 32, 44, 60, 81};
   int n = 10, key;
 
-  printf("Input the key to search: ");
+  for(int i = 0; i < size-1; i++) {
+    for(int j = 1; j < size; j++) {
+      if(v[j - 1] > v[j]) {
+        int aux = v[j - 1];
+        v[j - 1] = v[j];
+        v[j] = aux;
+      }
+    }
+  }
+
+  printf("\nInput the key to search: ");
   scanf("%d", &key);
 
   bool found = false;
