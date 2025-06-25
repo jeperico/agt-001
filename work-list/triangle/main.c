@@ -32,5 +32,4 @@ void main() {
       printf("^ERROR-500^ - ^INTERNAL-SERVER-ERROR^\n\n");
       break;
   }
-
 }
