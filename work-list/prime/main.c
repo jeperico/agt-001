@@ -1,16 +1,6 @@
 #include <stdio.h>
-#include <stdbool.h>
+#include "prime.h"
 
-
-bool check_prime(int k) {
-  if (k == 2) return true;
-  if ((k <= 1) || !(k % 2)) return false;
-
-  for (int i = 3; i * i <= k; i += 2) {
-    if (k % i == 0) return false;
-  }
-  return true;
-}
 
 void main() {
   int k = 0, n = 0;
@@ -24,8 +14,9 @@ void main() {
   while(count < n) {
     k++;
     if(check_prime(k)) {
-      printf("%d° - %d\n", n, k);
+      printf("\n%d° - %d", count + 1, k);
       count++;
     }
   }
+  printf("\n");
 }
